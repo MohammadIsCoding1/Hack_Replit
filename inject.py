@@ -1,20 +1,32 @@
 import request
 
 
-def check_vuln():
+def main():
   target=raw_input("Url inject: ")
-  payload="<script>alert(XSS);<script>"
+  type=input('''
+  [1]Javascipt
+  [2]html
+  [3]php
+  
+  > ''')
+  if type=1:
+    choice=input('''
+    [1]injection.js
+    
+    > ''')
+    if choice=1:
+      inject_payload=open('injection.js','r').read()
+      
+      
+  payload=inject
 
   req=request.post(target + payload) dd
 
   if payload in req.text:
-    print("XSS vulnerability discovered")
+    print("=vulnerability discovered")
     print("Attacking payload : "+payload)
   else:
     print("Secure")
-def code_inject():
-  pass
-    
     
 if __name__=="__main__":
-  check_vuln()
+  main()
